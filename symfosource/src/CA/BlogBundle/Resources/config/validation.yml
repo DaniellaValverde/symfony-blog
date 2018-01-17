@@ -1,0 +1,25 @@
+CA\BlogBundle\Entity\User:
+    properties:
+        mail:
+            - Regex:
+                pattern: '/^.+\@\S+\.\S+$/'
+            - Email:
+                message: 'This email is not valid'
+                checkMX: true
+
+        username:
+            - Regex:  
+                pattern: '/^[A-Za-z]+\d*$/'
+                message: 'This username is not valid'
+            - Length: 
+                min: 2
+                max: 50
+                minMessage: 'minimum 2 characters'
+                maxMessage: 'maximum 2 characters'
+
+        password:
+            - Length:
+                min: 2
+                max: 50
+                minMessage: 'minimum 2 characters'
+                maxMessage: 'maximum 2 characters'

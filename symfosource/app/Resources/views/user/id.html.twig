@@ -1,0 +1,40 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>{{ user.username }}</h1>
+
+    <table>
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ user.id }}</td>
+            </tr>
+            <tr>
+                <th>Mail</th>
+                <td>{{ user.mail }}</td>
+            </tr>
+            <tr>
+                <th>Roles</th>
+                <td>{% if user.roles %}{{ user.roles|join(', ') }}{% endif %}</td>
+            </tr>
+        </tbody>
+    </table>
+
+
+    <h2>{{ user.username }}'s posts</h2>
+
+        {% for post in posts %}
+
+            {% if post.user.id == user.id %}
+
+            <div class='post'>
+            <p><a href='{{ path('post_show', { 'id': post.id }) }}'>{{ post.title }}</a>({% if post.created %}{{ post.created|date('Y-m-d H:i:s') }}{% endif %})</p>
+            <p>{{ post.content }}</p>
+            </div>
+
+            {% endif %}
+    {% endfor %}
+
+    
+
+{% endblock %}

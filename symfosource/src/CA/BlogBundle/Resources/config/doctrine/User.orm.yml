@@ -1,0 +1,34 @@
+CA\BlogBundle\Entity\User:
+    type: entity
+
+    oneToMany:
+        posts:
+            targetEntity: Post
+            mappedBy: user
+            cascade: [detach]
+
+    table: user
+    repositoryClass: CA\BlogBundle\Repository\UserRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        username:
+            type: string
+            length: '50'
+            unique: true
+        password:
+            type: string
+            length: 255
+        salt:
+            type: string
+            length: 255
+        mail:
+            type: string
+            length: 255
+        roles:
+            type: array
+    lifecycleCallbacks: {  }

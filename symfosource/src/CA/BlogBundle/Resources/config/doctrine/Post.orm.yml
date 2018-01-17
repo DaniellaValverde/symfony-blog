@@ -1,0 +1,33 @@
+CA\BlogBundle\Entity\Post:
+    type: entity
+
+    manyToOne:
+        user:
+            nullable: true
+            targetEntity: User
+            inversedBy: posts
+            joinColumn:
+                name: user_id
+                referencedColumnName: id
+                onDelete: 'SET NULL'
+
+    table: null
+    repositoryClass: CA\BlogBundle\Repository\PostRepository
+    id:
+        id:
+            type: integer
+            id: true
+            generator:
+                strategy: AUTO
+    fields:
+        title:
+            type: string
+            length: '100'
+        content:
+            type: text
+        created:
+            type: datetime
+        updated:
+            nullable: true
+            type: datetime
+    lifecycleCallbacks: {  }

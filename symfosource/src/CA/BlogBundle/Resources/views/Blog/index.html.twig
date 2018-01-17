@@ -1,0 +1,36 @@
+{% extends "::base.html.twig" %}
+
+{% block title %}CABlogBundle:Blog:index{% endblock %}
+
+{% block body %}
+
+
+{% if app.user %}
+	<a href="{{ logout_path(key = null) }}">Logout</a>
+{% else %}
+	<a href="{{ path('login') }}">Login</a>
+{% endif %}
+
+<h1>Welcome to the Blog: index page</h1>
+
+<h2>Blogroll</h2>
+
+	<div class='post'>
+
+		{% for post in posts |slice(0, 10) %}
+
+			<p><a href='{{ path('post_show', { 'id': post.id }) }}'>{{ post.title }}</a>({% if post.created %}{{ post.created|date('Y-m-d H:i:s') }}{% endif %}) by 
+
+			{% if post.user %}
+				<a href='{{ path('user_id', { 'id': post.user.id }) }}'>{{ post.user.username }}</a></p>
+			{% else %}
+				Unknown</p>
+			{% endif %}
+
+			<p>{{ post.content }}</p>
+
+		{% endfor %}
+
+	</div>
+
+{% endblock %}
