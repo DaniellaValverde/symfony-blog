@@ -1,0 +1,14 @@
+# This file is auto-generated during the composer install
+
+# change to your configurations:
+parameters:
+    database_host: 127.0.0.1
+    database_port: 8889  #USE YOUR PORT NUMBER
+    database_name: coding
+    database_user: martin  #USE YOUR DB USERNAME
+    database_password: 1234 #AND YOUR DB PASSOWRD
+    mailer_transport: smtp
+    mailer_host: 127.0.0.1
+    mailer_user: null
+    mailer_password: null
+    secret: fd6c90d41a5634d07619c77ec8eecef9ca8d4841
