@@ -11,10 +11,10 @@ The repository contains a Symfony project for a simple blog with the following f
 - If a user is deleted his/her posts remain in the list.
 
 Requires:
-- PHP
+- PHP 7.1
 - Symfony version: 3.4
 - mysql
 
 Getting Started:
 - The script symfo.sh loads the database used in this project and starts server.
-- Pass database's username as parameter (./symfo.sh my_user)
+- Pass database's username as parameter (EX: ./symfo.sh my_user)
