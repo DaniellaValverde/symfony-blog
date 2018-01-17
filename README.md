@@ -10,7 +10,11 @@ The repository contains a Symfony project for a simple blog with the following f
 - Creating, editing and deleting a post is accessible to any user with ROLE_BLOGGER. However, the post must belong to the connected user for editing and deleting.
 - If a user is deleted his/her posts remain in the list.
 
-Getting Started:
+Requires:
+- PHP
 - Symfony version: 3.4
+- mysql
+
+Getting Started:
 - The script symfo.sh loads the database used in this project and starts server.
 - Pass database's username as parameter (./symfo.sh my_user)
