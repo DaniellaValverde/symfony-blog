@@ -13,10 +13,11 @@ The repository contains a Symfony project for a simple blog with the following f
 Requires:
 - PHP 7.1
 - Symfony version: 3.4
+- install composer
 - mysql
 
 Getting Started:
 - Change the parameters in this file: symfosource/app/config/parameters.yml
-- The script symfo.sh loads the database used in this project and starts server.
+- The script symfo.sh loads the database used in this project, installs dependencies and starts server.
 - Pass database's username as parameter (EX: ./symfo.sh my_username)
 - Open localhost on your port (EX: localhost:8000)
