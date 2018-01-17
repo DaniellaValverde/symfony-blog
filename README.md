@@ -17,4 +17,4 @@ Requires:
 
 Getting Started:
 - The script symfo.sh loads the database used in this project and starts server.
-- Pass database's username as parameter (EX: ./symfo.sh my_user)
+- Pass database's username as parameter (EX: ./symfo.sh my_username)
